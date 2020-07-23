@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/sign.css">
     <title>用户注册</title>
-    <!-- <script src="./js/jQuery1.12.4.min.js"></script> -->
     <script src="./js/jQuery.js"></script>
 </head>
 
@@ -26,7 +25,7 @@
         $("#submit").click(function(){
             $.ajax({
                 type:"POST",
-                url:"http://192.168.1.102:3000/users/register",
+                url:"http://192.168.1.103:3000/users/register",
                 data:{
                     username:$("#username").val(),
                     password:$("#password").val(),
@@ -35,6 +34,9 @@
                 },
                 success:function(mj){
                     console.log(mj);
+                    if(mj.state==0){
+                        location.href="sign-up.html"
+                    }
                 }
             })
         })
