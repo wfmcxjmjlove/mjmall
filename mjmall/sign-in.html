@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/sign.css">
+    <title>用户注册</title>
+    <!-- <script src="./js/jQuery1.12.4.min.js"></script> -->
+    <script src="./js/jQuery.js"></script>
+</head>
+
+<body>
+    <div class="sign-page">
+        <div class="page">
+            <div class="sign-up-nav bx" id="sign-up-navs">
+                <div><input id="username" type="text" placeholder="请输入用户名"></div>
+                <div><input id="password" type="password" placeholder="请输入密码"></div>
+                <div><input id="phone" type="phone" placeholder="请输入手机号"></div>
+                <div><input id="email" type="email" placeholder="请输入邮箱地址"></div>
+                <div id="submits"><div id="submit">注册</div></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#submit").click(function(){
+            $.ajax({
+                type:"POST",
+                url:"http://192.168.1.102:3000/users/register",
+                data:{
+                    username:$("#username").val(),
+                    password:$("#password").val(),
+                    phone:$("#phone").val(),
+                    email:$("#email").val(),
+                },
+                success:function(mj){
+                    console.log(mj);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

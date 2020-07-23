@@ -1,29 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/mall.css">
     <link rel="stylesheet" href="./css/iconfont.css">
     <title>mj商城</title>
-    <script src="./js/jQuery.js"></script>
+    <script src="./js/jQuery1.12.4.min.js"></script>
+    <script src="./js/art.js"></script>
+    <!-- <script type="text/html" id="item">
+        {{each $data.img}}
+            <a href=""><img src="{{$value,$data.img}}" alt=""></a>
+        {{/each}}
+    </script>
+    <script>
+        var ajax = new XMLHttpRequest();
+        ajax.open("GET", "https://192.168.1.102/w/website/bannerList", false);
+        ajax.send();
+        var data = JSON.parse(ajax.responseText);
+        var ITEM = template("item", data)
+        document.getElementById("nanner-img")[0].innerHTML = ITEM;
+    </script> -->
 </head>
+
 <body>
-    <div class="header">
-        <div class="bx cf">
+    <div class="header" id="mall">
+        <div class="contaier header-all">
             <div class="header-logo">
                 <a href=""><img src="./img/logo.png" alt=""></a>
             </div>
             <div class="header-search">
                 <input type="text" placeholder="请输入商品名称">
-                <i class="iconfont">&#xe65c;</i>
+                <a href="" class="iconfont search">&#xe65c;</a>
+                <ul class="cf">
+                    <li>
+                        <div><a href="">电器</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">数码</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">家具</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">男装</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">女装</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">童装</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">美妆</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">箱包</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">运动</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">汽车</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">房产</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">汽车</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">食品</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">酒类</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">特产</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">艺术</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">图书</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">机票</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">安装</a></div>
+                    </li>
+                    <li>
+                        <div><a href="">维修</a></div>
+                    </li>
+                </ul>
             </div>
             <div class="header-sign">
-                <div class="sign"><a href="">登录</a></div>
-                <div class="sign"><a href="">注册</a></div>
+                <div class="sign" id="sign-up"><a href="sign-up.html" target="_blank">登录</a></div>
+                <div class="sign" id="sign-in"><a href="sign-in.html" target="_blank">注册</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="bodyer">
+        <div class="contaier body-banner">
+            <div class="banner" id="banner-img">
+                <a>
+                    <img src="" alt="">
+                </a>
+                <div class="banner-left left-right">
+                    <a href="" class="iconfont banner-a">&#xe534;</a>
+                </div>
+                <div class="banner-right left-right">
+                    <a href="" class="iconfont banner-a">&#xe751;</a>
+                </div>
+            </div>
+            <div class="left-inside">
+                <ul>
+                    <li><a href="">家用电器</a></li>
+                    <li><a href="">手机</a><span>/</span><a href="">运营商</a></li>
+                    <li><a href="">家居</a><span>/</span><a href="">家厨</a></li>
+                    <li><a href="">电脑</a><span>/</span><a href="">办公</a></li>
+                    <li><a href="">清洁</a><span>/</span><a href="">宠物</a></li>
+                    <li><a href="">户外</a><span>/</span><a href="">钟表</a></li>
+                    <li><a href="">珠宝</a><span>/</span><a href="">母婴</a></li>
+                    <li><a href="">生鲜</a><span>/</span><a href="">酒店</a></li>
+                    <li><a href="">清洗</a><span>/</span><a href="">旅游</a></li>
+                    <li><a href="">二手</a><span>/</span><a href="">生活</a><span>/</span><a href="">电子书</a></li>
+                    <li><a href="">保险</a><span>/</span><a href="">文娱</a></li>
+                    <li><a href="">理财</a><span>/</span><a href="">教育</a></li>
+                    <li><a href="">工业品</a></li>
+                </ul>
+            </div>
+            <div class="right-inside">
+                <a href="">特色<br>优选</a>
+                <a href="">频道<br>广场</a>
+                <a href="">为你<br>推荐</a>
+                <a href=""><i class="iconfont">&#xe651;</i>客服</a>
+                <a href=""><i class="iconfont">&#xe631;</i>反馈</a>
+                <a href="#mall"><i class="iconfont">&#xe61f;</i>顶部</a>
+            </div>
+        </div>
+        <div class="body-text cf contaier">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6  pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pull-left">
+                    <div class="text-item ">
+                        <a href="">
+                            <div class="text-img">
+                                <img src="./img/1.jpg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p class="price">
+                                    <span>¥<strong>196.71</strong></span>
+                                    <span class="price-bao">包邮</span>
+                                </p>
+                                <span title="古拉良品原创 换个简约风 背带裙女夏天高">古拉良品原创 换个简约风 背带裙女夏天高</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

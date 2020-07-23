@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.sign-page{
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+}
+.page{
+    width: 1170px;
+    margin: auto;
+    height: 550px;
+    background-image: url("../img/logo.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 100%,100%;
+    position: relative;
+}
+.sign-up-nav{
+    width: 300px;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+}
+.sign-up-nav>div{
+    margin: auto;
+    width: 100%;
+    height: 45px;
+    margin-top: 40px;
+}
+.sign-up-nav>div input{
+    width: 100%;
+    height: 100%;
+    text-indent: 10px;
+    border-radius: 10px;
+    border: 2px solid #008037;
+    outline: none;
+}
+#submits{
+    margin: auto;
+    width: 150px;
+    height: 45px;
+    margin-top: 50px;
+}
+#submit{
+    width: 150px;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid #008037;
+    outline: none;
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    line-height: 45px;
+    text-align: center;
+}
+#submit:hover{
+    color: #f10215;
+}
